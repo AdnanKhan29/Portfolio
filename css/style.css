@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+::-webkit-scrollbar {
+    width: 17px; /* You can adjust the width as needed */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff7200; /* Set the desired background color */
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +17,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    scrollbar-color:#ff7200 ;
 }
 
 :root{
@@ -185,6 +195,8 @@ span{
 .heading{
     text-align: center;
     font-size: 4.5rem;
+    margin-bottom: 60px;
+
 }
 
 .about-content h2{
@@ -201,6 +213,51 @@ span{
     margin: 2rem 0 3rem;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+   }
+    100% {
+        transform: translateX(calc(-250px * 8));
+   }
+}
+.slider {
+    height: 170px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 98%;
+    padding-bottom: 50px;
+}
+.slider::before, .slider::after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.slider::before {
+    left: 0;
+    top: 0;
+}
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.slider .slide {
+    height: 100px;
+    width: 250px;
+}
+
+.services{
+    background: var(--second-bg-color);
+}
 
 .services h2{
     margin-bottom: 5rem;
@@ -216,11 +273,11 @@ span{
 
 .services-container .services-box{
     flex: 1 1 30rem;
-    background: var(--second-bg-color);
+    background: var(--bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid var(--bg-color);
+    border: .2rem solid var(--second-bg-color);
     transition: .5s ease;
 }
 
@@ -243,7 +300,7 @@ span{
 }
 
 .portfolio{
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .portfolio h2{
@@ -330,48 +387,92 @@ span{
     color: var(--second-bg-color);
 }
 
-.contact h2{
-    margin-bottom: 3rem;
-}
-
-.contact form{
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.contact form .input-box{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-}
-
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
+/* Section styling */
+.contact {
+    align-items: center;
+    padding: 50px 20px; /* Adjust padding and left margin as needed */
+    margin: 0 auto; /* Center the section */
+    max-width: 100%; /* Set a maximum width if needed */
     background: var(--second-bg-color);
-    border-radius: .8rem ;
-    margin: .7rem 0;
 }
 
-.contact form .input-box input{
-    width:49%;
+/* Heading styling */
+.heading {
+    font-size: 3rem;
 }
 
-.contact form textarea{
-    resize: none;
+
+/* Contact content wrapper styling */
+.contact-content-wrapper {
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: top;
+    flex-wrap: wrap;
+    padding-left: 20%;
+    text-align: left; /* Align text to the left */
+    margin-top: 20px; /* Add margin for better spacing */
 }
 
-.contact form .btn{
-    margin-top: 2rem;
-    cursor: pointer;
+/* Contact content styling */
+.contact-content,
+.contact-content2 {
+    width: 50%;
+    margin-bottom: 20px; /* Add margin for better spacing */
 }
 
+/* Contact content heading styling */
+.contact-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.contact-content p{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.contact-content h1{
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+/* Contact detail styling */
+.detail {
+    margin-bottom: 2rem;
+}
+
+/* Contact detail icon styling */
+.detail i {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color1);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color1);
+    margin: 0 1.5rem 0 0;
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+/* Contact detail icon hover styling */
+.detail i:hover {
+    background: var(--main-color1);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color1);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .contact-content,
+    .contact-content2 {
+        width: 100%;
+    }
+}
 
 @media(max-width: 1200px){
     html{
