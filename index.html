@@ -254,6 +254,18 @@
                     <a href="https://www.figma.com/proto/Ku99L1q8jFaKxRuLzkTOoh/WhatsApp-Clone?type=design&node-id=40-9&t=Z9X0B2xtES67UPg0-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=40%3A9&mode=design"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
+
+            <div class="portfolio-box">
+                <video muted autoplay>
+                    <source src="./images/recipe.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-layer">
+                    <h4>Figma Prototype</h4>
+                    <p>A Recipe Website using Figma</p>
+                    <a href="https://www.figma.com/proto/806HCY6ADiwmR1mE0woQVd/RECIPE-WEBSITE?page-id=0%3A1&type=design&node-id=64-4&viewport=425%2C188%2C0.03&t=3N3CLxIV8A5N8PTF-1&scaling=scale-down&starting-point-node-id=64%3A4&mode=design"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
             
 
         </div>
@@ -262,35 +274,39 @@
 
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <div class="contact-content-wrapper">
-            <div class="contact-content">
-                <h3>Add me <span>on</span></h3>
-                <div class="social-media">
-                    <!-- Social media links -->
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/profile.php?id=100080657139855&mibextid=2JQ9oc"><i class='bx bxl-facebook-circle' ></i></a>
-                        <a href="https://www.instagram.com/_.adnan.x.khan._/"><i class='bx bxl-instagram' ></i></a>
-                        <a href="https://t.snapchat.com/ZfgDSjfC"><i class='bx bxl-snapchat' ></i></a>
-                        <a href="https://www.linkedin.com/in/adnan-khan-547713246/"><i class='bx bxl-linkedin-square' ></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-content contact-content2">
-                <h3>Get in <span>touch</span></h3>
-                <br>
-                <br>
-                <p>Prefer to drop me a message directly? Use the contact form below:</p>
-                <h2 class="detail"><i class="fa-regular fa-envelope"></i> maaj20056@gmail.com</h2>
-                <h2 class="detail"><i class="fa-solid fa-phone"></i> +91 9666033995</h2>
-                <h1>I strive to respond to all inquiries within 5-6 hours. Your message is important to me, and I appreciate your patience.
 
-                    Looking forward to connecting with you!</h1>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" name="FULL NAME" placeholder="Full Name">
+                <input type="email" name="EMAIL" placeholder="Email Address">
             </div>
-        </div>
+
+            <div class="input-box">
+                <input type="number" name="MOBILE" placeholder="Mobile Number">
+                <input type="text" name="EMAIL SUBJECT"placeholder="Email Subject">
+            </div>
+            <textarea name="MESSAGE" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn" id="">
+        </form>
     </section>
     
-    
-    
+    <script>
+        const scriptURL = 'https://docs.google.com/spreadsheets/d/1VNgUH-7ZNQlQ_taouwm4P4ssJPckN7jK-xJ95HgIAnA/edit?usp=sharing'
+        const form = document.forms['submit-to-google-sheet']
+        const  msg = document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <!-- scroll reveal design -->

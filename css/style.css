@@ -255,6 +255,11 @@ span{
     width: 250px;
 }
 
+.slider .slide:hover {
+    height: 130px;
+    width: 280px;
+}
+
 .services{
     background: var(--second-bg-color);
 }
@@ -387,92 +392,48 @@ span{
     color: var(--second-bg-color);
 }
 
-/* Section styling */
-.contact {
-    align-items: center;
-    padding: 50px 20px; /* Adjust padding and left margin as needed */
-    margin: 0 auto; /* Center the section */
-    max-width: 100%; /* Set a maximum width if needed */
-    background: var(--second-bg-color);
+.contact h2{
+    margin-bottom: 3rem;
 }
 
-/* Heading styling */
-.heading {
-    font-size: 3rem;
-}
-
-
-/* Contact content wrapper styling */
-.contact-content-wrapper {
-    display: flex;
-    justify-content: center; /* Center the child elements horizontally */
-    align-items: top;
-    flex-wrap: wrap;
-    padding-left: 20%;
-    text-align: left; /* Align text to the left */
-    margin-top: 20px; /* Add margin for better spacing */
-}
-
-/* Contact content styling */
-.contact-content,
-.contact-content2 {
-    width: 50%;
-    margin-bottom: 20px; /* Add margin for better spacing */
-}
-
-/* Contact content heading styling */
-.contact-content h3{
-    font-size: 3.2rem;
-    font-weight: 700;
-}
-
-.contact-content p{
-    font-size: 2rem;
-    padding-bottom: 20px;
-}
-
-.contact-content h1{
-    font-weight: 500;
-    padding-bottom: 20px;
-}
-
-/* Contact detail styling */
-.detail {
-    margin-bottom: 2rem;
-}
-
-/* Contact detail icon styling */
-.detail i {
-    display: inline-flex;
-    justify-content: center;
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
     text-align: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-    border: .2rem solid var(--main-color1);
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--main-color1);
-    margin: 0 1.5rem 0 0;
-    text-decoration: none;
-    transition: .5s ease;
+    margin-bottom: 3rem;
 }
 
-/* Contact detail icon hover styling */
-.detail i:hover {
-    background: var(--main-color1);
-    color: var(--second-bg-color);
-    box-shadow: 0 0 1rem var(--main-color1);
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    .contact-content,
-    .contact-content2 {
-        width: 100%;
-    }
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem ;
+    margin: .7rem 0;
 }
+
+.contact form .input-box input{
+    width:49%;
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
 
 @media(max-width: 1200px){
     html{
