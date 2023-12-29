@@ -37,6 +37,7 @@ html{
 body{
     background: var(--bg-color);
     color:var(--text-color);
+    cursor: url('../images/cursor.svg'), auto ;
 }
 
 section{
